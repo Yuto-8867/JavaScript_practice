@@ -1,5 +1,14 @@
+var number = 1;
 
-var firstName = "Yuto";
-var lastName = "Inoue";
-
-console.log("こんにちは、" + lastName + firstName);
+while(number <= 100) {
+  if(number % 3 === 0 && number % 5 === 0) {
+    console.log("FizzBuzz");
+  }else if(number % 5 === 0) {
+    console.log("Buzz");
+  }else if(number % 3 === 0) {
+    console.log("Fizz")
+  }else {
+    console.log(number);
+  }
+  number ++;
+}
