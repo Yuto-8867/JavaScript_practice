@@ -1,40 +1,30 @@
-class Animal {
-  constructor(name,age) {
-    this.name = name;
-    this.age = age;
-  }
+import chalk from "chalk";
 
-  greet() {
-    console.log("こんにちは");
-  }
-
-  info() {
-    this.greet();
-    console.log(`名前は${this.name}です`);
-    console.log(`${this.age}歳です`);
-  }
-}
+import Animal from "./animal";
 
 class Dog extends Animal {
-  constructor(name,age,breed) {
-    super(name,age);
+  constructor(name, age, breed) {
+    super(name, age);
     this.breed = breed;
   }
 
   info() {
+    const humanAge = this.getHumanAge();
+    
     this.greet();
-    console.log(`名前は${this.name}です`);
-    console.log(`犬種は${this.breed}です`);
+    // console.logの中身をchalkを使って書き換えてください
+    console.log(chalk.yellow(`名前は${this.name}です`));
+    
+    // console.logの中身をchalkを使って書き換えてください
+    console.log(chalk.bgCyan(`犬種は${this.breed}です`));
+    
     console.log(`${this.age}歳です`);
-
-    const humanAge = dog.getHumanAge();
     console.log(`人間年齢で${humanAge}歳です`);
   }
-
+  
   getHumanAge() {
     return this.age * 7;
   }
 }
 
-const dog = new Dog("ジョン",7,"チワワ");
-dog.info();
+export default Dog;
